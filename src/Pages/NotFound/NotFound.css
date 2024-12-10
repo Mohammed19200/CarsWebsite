@@ -1,0 +1,25 @@
+.divError {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  /* padding: 5rem 0rem; */
+}
+
+@media screen and (max-width: 992px) {
+  .imgError {
+    width: 100%;
+  }
+  .divError {
+    padding: 7rem 0rem;
+  }
+}
+
+@media screen and (min-width: 992.5px) {
+  .imgError {
+    width: 50%;
+  }
+}

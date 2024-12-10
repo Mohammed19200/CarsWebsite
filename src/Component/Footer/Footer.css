@@ -1,0 +1,22 @@
+.divFooterPosition {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.linksFooterColor {
+  color: white !important;
+  font-size: 0.8rem;
+}
+
+.Section1Footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: flex-start;
+  gap: 0.2rem;
+}

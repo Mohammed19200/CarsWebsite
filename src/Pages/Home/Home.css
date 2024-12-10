@@ -1,0 +1,347 @@
+.bigDivLandingPage {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 1.2rem;
+}
+
+.h1descriptionBigDivLandingPage {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.imgimgBigDivLandingPage {
+  background-image: url("../../assets/landing-page/Frame.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2rem 0rem;
+  animation-name: myCar;
+  animation-duration: 2s;
+  width: 100%;
+}
+
+@keyframes myCar {
+  from {
+    width: 70%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.spanh1descriptionBigDivLandingPage {
+  color: #1572d3;
+}
+
+/*  */
+/*  */
+/*  */
+.divApiAll {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.button1DivApiAll {
+  background-color: #1572d31a;
+  color: #033dd7;
+  border: 1px solid #1572d31a;
+  padding: 5px 20px;
+  border-radius: 0.4rem;
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
+}
+
+.h1DivApiAll {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.button2DivApiAll {
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
+}
+
+.bigDivInputsstyle {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin: auto;
+  padding: 2rem 0rem;
+}
+
+.divHowToWorkIconsStyle {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.everyDivDivHowToWorkIconsStyle {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.divIconEveryDivDivHowToWorkIconsStyle {
+  background-color: #ecf5ff;
+  padding: 2rem 0rem;
+  text-align: center;
+  font-size: 3rem;
+  border-radius: 1.5rem;
+  color: #1572d3;
+}
+
+.peveryDivDivHowToWorkIconsStyle {
+  font-size: 0.8rem;
+}
+/*  */
+/*  */
+/*  */
+.bigestDivIcons {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0rem;
+}
+
+.bigestDivBrands {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.divImgBrand {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+/*  */
+/*  */
+/*  */
+.bigestDivSec5 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.div1ImgBigestDivSec5 {
+  background-image: url("../../assets/landing-page/sec-5/Vector.png");
+  background-size: cover;
+  background-position: left;
+  padding: 3rem 0rem;
+  background-repeat: no-repeat;
+}
+
+.div2BigestDivSec5 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.bigDivBenefitdiv2BigestDivSec5 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.divDescriptionbigDivBenefitdiv2BigestDivSec5 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.divIconsdivDescriptionbigDivBenefitdiv2BigestDivSec5 {
+  padding: 1.2rem;
+  background: #ecf5ff;
+  border-radius: 0.8rem;
+  color: #1572d3;
+}
+
+.divTextdivDescriptionbigDivBenefitdiv2BigestDivSec5 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+/*  */
+/*  */
+/*  */
+
+.bigDivUserReview {
+  background: #f7fbff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+  padding: 2rem 0rem;
+  gap: 2rem;
+  background-image: url("../../assets/landing-page/sec-6/bg-sec6.png");
+  background-repeat: no-repeat;
+  background-position-x: right;
+}
+
+.divbigDivUserReview {
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.divDescriptiondiv1bigDivUserReview {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.bigDivUserReviewdivTitle {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+/*  */
+/*  */
+/*  */
+.bigestDivSec7 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+}
+
+.div1BigestDivSec7 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.spandiv1BigestDivSec7 {
+  color: rgb(13 110 253);
+}
+
+.divDownloadDiv1BigestDivSec7 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.divInputsdiv1BigestDivSec7 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0rem;
+}
+
+.inputStyledivInputsdiv1BigestDivSec7 {
+  border: 1px solid #cedcff;
+  border-radius: 15px;
+  background-color: #cedcff;
+  padding: 0.3rem;
+}
+/*  */
+/*  */
+/*  */
+.buttonLocationInput {
+  outline: 0;
+  border: 0;
+  background: #ffffff;
+  border: 1px solid #dee2e6;
+  padding: 0.1rem 0.6rem;
+  background-color: #e5e5e5;
+}
+
+@media screen and (max-width: 767.5px) {
+  .bigestDivBrands {
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 991.5px) {
+  .bigDivLandingPage {
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+  }
+  .h1descriptionBigDivLandingPage {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .div2BigestDivSec5 {
+    margin: auto;
+  }
+  .descriptionBigDivLandingPage {
+    margin: auto;
+  }
+}

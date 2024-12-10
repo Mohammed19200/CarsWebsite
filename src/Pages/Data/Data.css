@@ -1,0 +1,18 @@
+.bigDivCard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.CardBodyDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
