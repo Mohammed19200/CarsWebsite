@@ -20,19 +20,36 @@ import { BsCalendar2DayFill } from "react-icons/bs";
 import { IoLogoWechat } from "react-icons/io5";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import car from "../../assets/card/car1.png";
-import car2 from "../../assets/landing-page/car2.png";
-import car3 from "../../assets/landing-page/car3.png";
-import car4 from "../../assets/landing-page/car4.png";
-import { LuAirVent } from "react-icons/lu";
-import { MdOutlineAutoAwesomeMosaic } from "react-icons/md";
-import { IoPersonOutline } from "react-icons/io5";
-import { LuDoorOpen } from "react-icons/lu";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { IoIosStar } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
 export default function Home() {
   let navigate = useNavigate();
+  const [dataItem, setdataItem] = useState([]);
+  const [Input, setInput] = useState();
+
+  async function allData() {
+    return await axios
+      .get("https://myfakeapi.com/api/cars")
+      .then((data) => {
+        setdataItem(data?.data?.cars);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  useEffect(() => {
+    allData();
+  }, []);
+
+  let dataSliceFixed = dataItem.slice(0, 4);
+  let dataSliceDynamic = dataItem.slice(0, 20);
+
   return (
     <div>
       <div className="col-12 bigDivLandingPage">
@@ -47,11 +64,7 @@ export default function Home() {
           </p>
         </div>
         <div className="col-10 col-lg-5 imgBigDivLandingPage">
-          <img
-            className="imgimgBigDivLandingPage"
-            src={imgBigCar}
-            alt=""
-          />
+          <img className="imgimgBigDivLandingPage" src={imgBigCar} alt="" />
         </div>
       </div>
 
@@ -65,6 +78,9 @@ export default function Home() {
               className="form-control col-12"
               type="text"
               placeholder="Search By Name"
+              onKeyUp={(e) => {
+                setInput(e.target.value);
+              }}
             />
           </div>
           <button className="btn btn-primary col-md-2 col-lg-1">Search</button>
@@ -75,213 +91,129 @@ export default function Home() {
           <h1 className="h1DivApiAll">Most popular cars rental deals</h1>
 
           <div className="col-12 bigDivCard">
-            <div className="bigDivCard col-10 col-sm-5 col-md-4 col-lg-3 col-xl-2 ">
-              <Card className="row">
-                <Card.Img className="w-75 m-auto" variant="top" src={car3} />
-                <Card.Body className="CardBodyDiv col-12">
-                  <Card.Title className="col-11 h5">
-                    Jaguar XE L P250
-                  </Card.Title>
-                  <Card.Text className="col-11">
-                    <IoIosStar style={{ color: "gold" }} /> 4.8{" "}
-                    <span style={{ color: "#808080" }}>(2.436 reviews)</span>
-                  </Card.Text>
-                  <Card.Text
-                    className="col-6 col-sm-6 "
-                    style={{ color: "#959595", fontSize: "0.8rem" }}
-                  >
-                    <IoPersonOutline /> 2 Passagers
-                  </Card.Text>
-                  <Card.Text
-                    className="col-6 col-sm-6"
-                    style={{ color: "#959595", fontSize: "0.8rem" }}
-                  >
-                    <MdOutlineAutoAwesomeMosaic /> Auto
-                  </Card.Text>
-                  <Card.Text
-                    className="col-6 col-sm-6"
-                    style={{ color: "#959595", fontSize: "0.8rem" }}
-                  >
-                    <LuAirVent /> Air Conditioning
-                  </Card.Text>
-                  <Card.Text
-                    className="col-6 col-sm-6"
-                    style={{ color: "#959595", fontSize: "0.8rem" }}
-                  >
-                    <LuDoorOpen /> 2 Doors
-                  </Card.Text>
-                  <Card.Text className="col-12">
-                    <span style={{ color: "#595959" }}>Price :</span>{" "}
-                    <span style={{ color: "#292929" }}>$1,800</span>{" "}
-                    <span style={{ color: "#9C9C9C" }}>/day</span>
-                  </Card.Text>
-                  <Button
-                    onClick={() => {
-                      navigate("/product");
-                    }}
-                    className="col-9 col-md-8 col-lg-7 col-xl-8"
-                    variant="primary"
-                  >
-                    Rent Now
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>
-
-            <div className="bigDivCard col-10 col-sm-5 col-md-4 col-lg-3 col-xl-2 ">
-              <Card className="row">
-                <Card.Img className="w-75 m-auto" variant="top" src={car2} />
-                <Card.Body className="CardBodyDiv col-12">
-                  <Card.Title className="col-11 h5">Audi R8</Card.Title>
-                  <Card.Text className="col-11">
-                    <IoIosStar style={{ color: "gold" }} /> 4.6{" "}
-                    <span style={{ color: "#808080" }}>(1.936 reviews)</span>
-                  </Card.Text>
-                  <Card.Text
-                    className="col-6 col-sm-6 "
-                    style={{ color: "#959595", fontSize: "0.8rem" }}
-                  >
-                    <IoPersonOutline /> 2 Passagers
-                  </Card.Text>
-                  <Card.Text
-                    className="col-6 col-sm-6"
-                    style={{ color: "#959595", fontSize: "0.8rem" }}
-                  >
-                    <MdOutlineAutoAwesomeMosaic /> Auto
-                  </Card.Text>
-                  <Card.Text
-                    className="col-6 col-sm-6"
-                    style={{ color: "#959595", fontSize: "0.8rem" }}
-                  >
-                    <LuAirVent /> Air Conditioning
-                  </Card.Text>
-                  <Card.Text
-                    className="col-6 col-sm-6"
-                    style={{ color: "#959595", fontSize: "0.8rem" }}
-                  >
-                    <LuDoorOpen /> 2 Doors
-                  </Card.Text>
-                  <Card.Text className="col-12">
-                    <span style={{ color: "#595959" }}>Price :</span>{" "}
-                    <span style={{ color: "#292929" }}>$2,100</span>{" "}
-                    <span style={{ color: "#9C9C9C" }}>/day</span>
-                  </Card.Text>
-                  <Button
-                    onClick={() => {
-                      navigate("/product");
-                    }}
-                    className="col-9 col-md-8 col-lg-7 col-xl-8"
-                    variant="primary"
-                  >
-                    Rent Now
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>
-
-            <div className="bigDivCard col-10 col-sm-5 col-md-4 col-lg-3 col-xl-2 ">
-              <Card className="row">
-                <Card.Img className="w-75 m-auto" variant="top" src={car} />
-                <Card.Body className="CardBodyDiv col-12">
-                  <Card.Title className="col-11 h5">BMW M3</Card.Title>
-                  <Card.Text className="col-11">
-                    <IoIosStar style={{ color: "gold" }} /> 4.5{" "}
-                    <span style={{ color: "#808080" }}>(2.036 reviews)</span>
-                  </Card.Text>
-                  <Card.Text
-                    className="col-6 col-sm-6 "
-                    style={{ color: "#959595", fontSize: "0.8rem" }}
-                  >
-                    <IoPersonOutline /> 2 Passagers
-                  </Card.Text>
-                  <Card.Text
-                    className="col-6 col-sm-6"
-                    style={{ color: "#959595", fontSize: "0.8rem" }}
-                  >
-                    <MdOutlineAutoAwesomeMosaic /> Auto
-                  </Card.Text>
-                  <Card.Text
-                    className="col-6 col-sm-6"
-                    style={{ color: "#959595", fontSize: "0.8rem" }}
-                  >
-                    <LuAirVent /> Air Conditioning
-                  </Card.Text>
-                  <Card.Text
-                    className="col-6 col-sm-6"
-                    style={{ color: "#959595", fontSize: "0.8rem" }}
-                  >
-                    <LuDoorOpen /> 2 Doors
-                  </Card.Text>
-                  <Card.Text className="col-12">
-                    <span style={{ color: "#595959" }}>Price :</span>{" "}
-                    <span style={{ color: "#292929" }}>$1,600</span>{" "}
-                    <span style={{ color: "#9C9C9C" }}>/day</span>
-                  </Card.Text>
-                  <Button
-                    onClick={() => {
-                      navigate("/product");
-                    }}
-                    className="col-9 col-md-8 col-lg-7 col-xl-8"
-                    variant="primary"
-                  >
-                    Rent Now
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>
-
-            <div className="bigDivCard col-10 col-sm-5 col-md-4 col-lg-3 col-xl-2 ">
-              <Card className="row">
-                <Card.Img className="w-75 m-auto" variant="top" src={car4} />
-                <Card.Body className="CardBodyDiv col-12">
-                  <Card.Title className="col-11 h5">
-                    Lamborghini Huracan
-                  </Card.Title>
-                  <Card.Text className="col-11">
-                    <IoIosStar style={{ color: "gold" }} /> 4.3{" "}
-                    <span style={{ color: "#808080" }}>(2.236 reviews)</span>
-                  </Card.Text>
-                  <Card.Text
-                    className="col-6 col-sm-6 "
-                    style={{ color: "#959595", fontSize: "0.8rem" }}
-                  >
-                    <IoPersonOutline /> 2 Passagers
-                  </Card.Text>
-                  <Card.Text
-                    className="col-6 col-sm-6"
-                    style={{ color: "#959595", fontSize: "0.8rem" }}
-                  >
-                    <MdOutlineAutoAwesomeMosaic /> Auto
-                  </Card.Text>
-                  <Card.Text
-                    className="col-6 col-sm-6"
-                    style={{ color: "#959595", fontSize: "0.8rem" }}
-                  >
-                    <LuAirVent /> Air Conditioning
-                  </Card.Text>
-                  <Card.Text
-                    className="col-6 col-sm-6"
-                    style={{ color: "#959595", fontSize: "0.8rem" }}
-                  >
-                    <LuDoorOpen /> 2 Doors
-                  </Card.Text>
-                  <Card.Text className="col-12">
-                    <span style={{ color: "#595959" }}>Price :</span>{" "}
-                    <span style={{ color: "#292929" }}>$2,300</span>{" "}
-                    <span style={{ color: "#9C9C9C" }}>/day</span>
-                  </Card.Text>
-                  <Button
-                    onClick={() => {
-                      navigate("/product");
-                    }}
-                    className="col-9 col-md-8 col-lg-7 col-xl-8"
-                    variant="primary"
-                  >
-                    Rent Now
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>
+            {Input == undefined || Input == null
+              ? dataSliceFixed.map((item, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className="bigDivCard col-10 col-sm-5 col-md-3 col-lg-3 col-xl-2 "
+                    >
+                      <Card className="row">
+                        <Card.Img
+                          className="w-75 m-auto"
+                          variant="top"
+                          src={car}
+                        />
+                        <Card.Body className="CardBodyDiv col-12">
+                          <Card.Title className="col-11 h5">
+                            {item.car_model}
+                          </Card.Title>
+                          <Card.Text className="col-11">
+                            <IoIosStar style={{ color: "gold" }} /> 4.8{" "}
+                            <span style={{ color: "#808080" }}>
+                              (2.436 reviews)
+                            </span>
+                          </Card.Text>
+                          <Card.Text
+                            style={{ color: "#959595", fontSize: "0.8rem" }}
+                            className="col-6 col-sm-6"
+                          >
+                            {item.car}
+                          </Card.Text>
+                          <Card.Text
+                            style={{ color: "#959595", fontSize: "0.8rem" }}
+                            className="col-6 col-sm-6"
+                          >
+                            {item.price}
+                          </Card.Text>
+                          <Card.Text
+                            style={{ color: "#959595", fontSize: "0.8rem" }}
+                            className="col-6 col-sm-6"
+                          >
+                            {item.car_model_year}
+                          </Card.Text>
+                          <Card.Text
+                            style={{ color: "#959595", fontSize: "0.8rem" }}
+                            className="col-6 col-sm-6"
+                          >
+                            {item.car_color}
+                          </Card.Text>
+                          <Button
+                            onClick={() => {
+                              navigate("/product");
+                            }}
+                            className="col-9 col-md-8 col-lg-7 col-xl-8"
+                            variant="primary"
+                          >
+                            Rent Now
+                          </Button>
+                        </Card.Body>
+                      </Card>
+                    </div>
+                  );
+                })
+              : dataSliceDynamic.map((item, index) => {
+                  if (item.car_model.includes(Input)) {
+                    return (
+                      <div
+                        key={index}
+                        className="bigDivCard col-10 col-sm-5 col-md-3 col-lg-3 col-xl-2 "
+                      >
+                        <Card className="row">
+                          <Card.Img
+                            className="w-75 m-auto"
+                            variant="top"
+                            src={car}
+                          />
+                          <Card.Body className="CardBodyDiv col-12">
+                            <Card.Title className="col-11 h5">
+                              {item.car_model}
+                            </Card.Title>
+                            <Card.Text className="col-11">
+                              <IoIosStar style={{ color: "gold" }} /> 4.8{" "}
+                              <span style={{ color: "#808080" }}>
+                                (2.436 reviews)
+                              </span>
+                            </Card.Text>
+                            <Card.Text
+                              style={{ color: "#959595", fontSize: "0.8rem" }}
+                              className="col-6 col-sm-6"
+                            >
+                              {item.car}
+                            </Card.Text>
+                            <Card.Text
+                              style={{ color: "#959595", fontSize: "0.8rem" }}
+                              className="col-6 col-sm-6"
+                            >
+                              {item.price}
+                            </Card.Text>
+                            <Card.Text
+                              style={{ color: "#959595", fontSize: "0.8rem" }}
+                              className="col-6 col-sm-6"
+                            >
+                              {item.car_model_year}
+                            </Card.Text>
+                            <Card.Text
+                              style={{ color: "#959595", fontSize: "0.8rem" }}
+                              className="col-6 col-sm-6"
+                            >
+                              {item.car_color}
+                            </Card.Text>
+                            <Button
+                              onClick={() => {
+                                navigate("/product");
+                              }}
+                              className="col-9 col-md-8 col-lg-7 col-xl-8"
+                              variant="primary"
+                            >
+                              Rent Now
+                            </Button>
+                          </Card.Body>
+                        </Card>
+                      </div>
+                    );
+                  }
+                })}
           </div>
 
           <button

@@ -14,14 +14,18 @@
   line-height: 1.2;
 }
 
-.imgimgBigDivLandingPage {
+.imgBigDivLandingPage {
   background-image: url("../../assets/landing-page/Frame.png");
   background-size: cover;
   background-repeat: no-repeat;
   padding: 2rem 0rem;
+}
+
+.imgimgBigDivLandingPage {
   animation-name: myCar;
   animation-duration: 2s;
   width: 100%;
+  position: relative;
 }
 
 @keyframes myCar {
