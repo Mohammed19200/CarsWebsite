@@ -55,7 +55,7 @@ export default function Data() {
               className="bigDivCard col-10 col-sm-5 col-md-3 col-lg-3 col-xl-2 "
             >
               <Card className="row">
-                <Card.Img className="w-75 m-auto" variant="top" src={car} />
+                <Card.Img className="w-100 m-auto" variant="top" src={car} />
                 <Card.Body className="CardBodyDiv col-12">
                   <Card.Title className="col-11 h5">
                     {item.car_model}

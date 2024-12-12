@@ -122,22 +122,6 @@ export default function Footer() {
                     Partner Network
                   </a>
                 </li>
-                <li className="nav-item mb-2">
-                  <a
-                    href="#"
-                    className="nav-link p-0 text-body-secondary linksFooterColor"
-                  >
-                    Cruises
-                  </a>
-                </li>
-                <li className="nav-item mb-2">
-                  <a
-                    href="#"
-                    className="nav-link p-0 text-body-secondary linksFooterColor"
-                  >
-                    Developer
-                  </a>
-                </li>
               </ul>
             </div>
 
@@ -175,14 +159,6 @@ export default function Footer() {
                     className="nav-link p-0 text-body-secondary linksFooterColor"
                   >
                     Press Center
-                  </a>
-                </li>
-                <li className="nav-item mb-2">
-                  <a
-                    href="#"
-                    className="nav-link p-0 text-body-secondary linksFooterColor"
-                  >
-                    Advertise
                   </a>
                 </li>
               </ul>

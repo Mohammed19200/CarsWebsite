@@ -48,7 +48,7 @@ export default function Home() {
   }, []);
 
   let dataSliceFixed = dataItem.slice(0, 4);
-  let dataSliceDynamic = dataItem.slice(0, 20);
+  let dataSliceDynamic = dataItem.slice(0, 10);
 
   return (
     <div>
@@ -100,7 +100,7 @@ export default function Home() {
                     >
                       <Card className="row">
                         <Card.Img
-                          className="w-75 m-auto"
+                          className="w-100 m-auto"
                           variant="top"
                           src={car}
                         />
@@ -153,7 +153,12 @@ export default function Home() {
                   );
                 })
               : dataSliceDynamic.map((item, index) => {
-                  if (item.car_model.includes(Input)) {
+                  if (
+                    item.car_model
+                      .toUpperCase()
+                      .includes(Input.toUpperCase()) ||
+                    item.car_model.toLowerCase().includes(Input.toLowerCase())
+                  ) {
                     return (
                       <div
                         key={index}
@@ -161,7 +166,7 @@ export default function Home() {
                       >
                         <Card className="row">
                           <Card.Img
-                            className="w-75 m-auto"
+                            className="w-100 m-auto"
                             variant="top"
                             src={car}
                           />
