@@ -63,7 +63,7 @@ export default function Home() {
             Android device.
           </p>
         </div>
-        <div className="col-10 col-lg-5 imgBigDivLandingPage">
+        <div className="col-10 col-md-8 col-lg-5 imgBigDivLandingPage">
           <img className="imgimgBigDivLandingPage" src={imgBigCar} alt="" />
         </div>
       </div>

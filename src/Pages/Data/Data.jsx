@@ -26,6 +26,8 @@ export default function Data() {
     allData();
   }, []);
 
+  let dataSliceDynamic = dataItem.slice(0, 30);
+
   return (
     <div style={{ padding: "2rem 0rem" }}>
       <h5 style={{ padding: "0.5rem 2rem", color: "#959595" }}>
@@ -46,7 +48,7 @@ export default function Data() {
       </div>
 
       <div className="col-12 bigDivCard">
-        {dataItem.map((item, index) => {
+        {dataSliceDynamic.map((item, index) => {
           return (
             <div
               key={index}

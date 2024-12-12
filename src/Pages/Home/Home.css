@@ -19,6 +19,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   padding: 2rem 0rem;
+  display: flex;
+      justify-content: flex-end;
+      align-items: center;
 }
 
 .imgimgBigDivLandingPage {
@@ -29,13 +32,9 @@
 }
 
 @keyframes myCar {
-  from {
-    width: 70%;
-  }
-
-  to {
-    width: 100%;
-  }
+  0%   {right: 0px;width: 30%;}
+  50%  {right: 0px;width: 70%;}
+  100% {right: 0px;width: 100%;}
 }
 
 .spanh1descriptionBigDivLandingPage {
