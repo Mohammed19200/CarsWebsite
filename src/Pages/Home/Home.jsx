@@ -70,10 +70,7 @@ export default function Home() {
 
       <div>
         <div className="col-12 col-md-10 bigDivInputsstyle">
-          <button className="buttonLocationInput">
-            <FaLocationDot />
-          </button>
-          <div className="col-8 col-md-10">
+          <div className="col-11 col-sm-12 col-md-12">
             <input
               className="form-control col-12"
               type="text"
@@ -83,7 +80,6 @@ export default function Home() {
               }}
             />
           </div>
-          <button className="btn btn-primary col-md-2 col-lg-1">Search</button>
         </div>
 
         <div className="col-12 divApiAll">
@@ -298,7 +294,7 @@ export default function Home() {
       </div>
 
       <div className="col-12 bigestDivSec5">
-        <div className="col-10 col-md-9 col-lg-5 col-xl-6 div1ImgBigestDivSec5">
+        <div className="col-11 col-sm-9 col-md-8 col-lg-5 col-xl-6 div1ImgBigestDivSec5">
           <img className="w-100" src={Audi} alt="Audi Car" />
         </div>
 
@@ -401,40 +397,40 @@ export default function Home() {
 
       <div className="bigestDivSec7">
         <div className="col-10 col-sm-10 col-md-5 col-lg-5 div1BigestDivSec7">
-          <h1 className="col-12 h2">
+          <h1 className="col-12 h2 h1Div1BigestDivSec7">
             Download Rentcars App for{" "}
             <span className="spandiv1BigestDivSec7">FREE</span>
           </h1>
           <p className="pdiv1BigestDivSec7 col-12">
             For faster, easier booking and exclusive deals.
           </p>
-          <div className="divDownloadDiv1BigestDivSec7 col-12 col-sm-10">
+          <div className="divDownloadDiv1BigestDivSec7 col-12 col-sm-12 col-md-10">
             <img src={android} alt="" />
             <img src={ios} alt="" />
           </div>
           <div className="divInputsdiv1BigestDivSec7 col-12">
             <input
-              className="inputStyledivInputsdiv1BigestDivSec7 col-12 col-sm-12 col-md-12 col-lg-7"
+              className="inputStyledivInputsdiv1BigestDivSec7 col-12 col-sm-10 col-md-12 col-lg-9"
               type="text"
               placeholder="Name"
             />
             <input
-              className="inputStyledivInputsdiv1BigestDivSec7 col-12 col-sm-12 col-md-12 col-lg-7"
+              className="inputStyledivInputsdiv1BigestDivSec7 col-12 col-sm-10 col-md-12 col-lg-9"
               type="number"
               placeholder="Phone Number"
             />
             <input
-              className="inputStyledivInputsdiv1BigestDivSec7 col-12 col-sm-12 col-md-12 col-lg-7"
+              className="inputStyledivInputsdiv1BigestDivSec7 col-12 col-sm-10 col-md-12 col-lg-9"
               type="email"
               placeholder="Email"
             />
-            <button className="btn btn-primary col-8 col-sm-6 col-lg-3">
+            <button className="btn btn-primary col-8 col-sm-6 col-lg-4">
               Send
             </button>
           </div>
         </div>
 
-        <div className="col-8 col-sm-6 col-md-4 col-lg-3">
+        <div className="col-8 col-sm-6 col-md-5 col-lg-4 col-xl-3">
           <img
             className="w-100"
             src={applicationImage}

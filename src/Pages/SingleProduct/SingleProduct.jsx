@@ -8,7 +8,7 @@ import { LuDoorOpen } from "react-icons/lu";
 export default function SingleProduct() {
   return (
     <div className="col-12 bigDivSingleProduct">
-      <div className="col-11 col-md-10 col-lg-5 divImgSingleProduct">
+      <div className="col-11 col-sm-10 col-md-9 col-lg-5 divImgSingleProduct">
         <img className="w-100" src={car} alt="" />
       </div>
 

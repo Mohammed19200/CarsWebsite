@@ -16,7 +16,7 @@ export default function Footer() {
           style={{ backgroundColor: "#051C34", color: "white" }}
         >
           <div className="col-12 divFooterPosition">
-            <div className="col-11 col-sm-3 col-md-2 Section1Footer">
+            <div className="col-11 col-sm-3 col-md-3 Section1Footer">
               <img src={footerLogo} alt="" />
               <ul className="nav flex-column">
                 <li className="nav-item mb-2">
@@ -47,7 +47,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="col-5 col-sm-4 col-md-2">
+            <div className="col-5 col-sm-3 col-md-2 Section1Footer">
               <h5>Our Products</h5>
 
               <ul className="nav flex-column">
@@ -86,7 +86,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="col-5 col-sm-4 col-md-2">
+            <div className="col-5 col-sm-3 col-md-2 Section1Footer">
               <h5>Resources</h5>
 
               <ul className="nav flex-column">
@@ -125,7 +125,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="col-5 col-sm-4 col-md-2">
+            <div className="col-5 col-sm-3 col-md-2 Section1Footer">
               <h5>About Rentcars</h5>
 
               <ul className="nav flex-column">
@@ -164,9 +164,9 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="col-5 col-sm-4 col-md-1">
+            <div className="col-5 col-sm-3 col-md-2 lastSectionFooter ">
               <h5>Follow Us</h5>
-              <ul className="nav d-flex" style={{ gap: "1rem" }}>
+              <ul className="nav" style={{ gap: "1rem" }}>
                 <img src={facebookIcon} alt="" />
                 <img src={instegramIcon} alt="" />
                 <img src={youtubeIcon} alt="" />
@@ -174,11 +174,10 @@ export default function Footer() {
             </div>
           </div>
 
-          <div
-            className="py-4 my-4 border-top"
-            style={{ padding: "0rem 1rem" }}
-          >
-            <p>Copyright 2023 ・ Rentcars, All Rights Reserved</p>
+          <div className="py-4 my-4 border-top">
+            <p className="pCopyRight">
+              Copyright 2023 ・ Rentcars, All Rights Reserved
+            </p>
           </div>
         </footer>
       </div>

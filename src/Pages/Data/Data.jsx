@@ -33,7 +33,11 @@ export default function Data() {
       <h5 style={{ padding: "0.5rem 2rem", color: "#959595" }}>
         {" "}
         <span
-          style={{ textDecoration: "underline", color: "black" }}
+          style={{
+            textDecoration: "underline",
+            color: "black",
+            cursor: "pointer",
+          }}
           onClick={() => {
             navigate("/home");
           }}

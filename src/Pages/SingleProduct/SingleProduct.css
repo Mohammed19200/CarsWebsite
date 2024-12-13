@@ -4,7 +4,8 @@
   flex-wrap: wrap;
   align-content: center;
   justify-content: flex-start;
-  gap: 2rem;
+  gap: 0.3rem;
+  padding-top: 1.5rem;
 }
 
 .secondDivSingleProduct {
@@ -24,14 +25,16 @@
 .divImgSingleProduct {
   background-image: url("../../assets/landing-page/sec-5/Vector.png");
   background-repeat: no-repeat;
-  background-position-x: 91px;
-  background-position-y: -2px;
-  background-size: cover;
-  padding: 2rem 0rem;
+  background-size: contain;
+  padding: 4rem 0rem;
 }
 
 @media screen and (max-width: 991.5px) {
   .secondDivSingleProduct {
     margin: auto;
+  }
+  .bigDivSingleProduct {
+    padding-top: 0rem;
+    padding: 1rem 0rem;
   }
 }
