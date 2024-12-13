@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import car from "../../assets/card/car1.png";
+import car2 from "../../assets/card/car2.png";
+import car3 from "../../assets/card/car3.png";
 import "./Data.css";
 import { IoIosStar } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
@@ -27,6 +29,38 @@ export default function Data() {
   }, []);
 
   let dataSliceDynamic = dataItem.slice(0, 30);
+  let carsImage = [
+    car,
+    car2,
+    car3,
+    car,
+    car2,
+    car3,
+    car,
+    car2,
+    car3,
+    car,
+    car,
+    car2,
+    car3,
+    car,
+    car2,
+    car3,
+    car,
+    car2,
+    car3,
+    car,
+    car,
+    car2,
+    car3,
+    car,
+    car2,
+    car3,
+    car,
+    car2,
+    car3,
+    car,
+  ];
 
   return (
     <div style={{ padding: "2rem 0rem" }}>
@@ -56,10 +90,15 @@ export default function Data() {
           return (
             <div
               key={index}
-              className="bigDivCard col-10 col-sm-5 col-md-3 col-lg-3 col-xl-2 "
+              className="bigDivCard col-9 col-sm-5 col-md-3 col-lg-3 col-xl-2 "
             >
               <Card className="row">
-                <Card.Img className="w-100 m-auto" variant="top" src={car} />
+                <Card.Img
+                  height={110}
+                  className="w-75 m-auto"
+                  variant="top"
+                  src={carsImage[index]}
+                />
                 <Card.Body className="CardBodyDiv col-12">
                   <Card.Title className="col-11 h5">
                     {item.car_model}

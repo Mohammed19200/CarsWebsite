@@ -10,7 +10,6 @@ import girl from "../../assets/landing-page/sec-6/girl.png";
 import applicationImage from "../../assets/landing-page/sec-7/iPhone-14.png";
 import android from "../../assets/landing-page/andriod.png";
 import ios from "../../assets/landing-page/ios.png";
-import { FaLocationDot } from "react-icons/fa6";
 import { MdEditLocation } from "react-icons/md";
 import { SlCalender } from "react-icons/sl";
 import { IoCarSport } from "react-icons/io5";
@@ -20,6 +19,8 @@ import { BsCalendar2DayFill } from "react-icons/bs";
 import { IoLogoWechat } from "react-icons/io5";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import car from "../../assets/card/car1.png";
+import car2 from "../../assets/card/car2.png";
+import car3 from "../../assets/card/car3.png";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { IoIosStar } from "react-icons/io";
@@ -48,7 +49,24 @@ export default function Home() {
   }, []);
 
   let dataSliceFixed = dataItem.slice(0, 4);
-  let dataSliceDynamic = dataItem.slice(0, 10);
+  let dataSliceDynamic = dataItem.slice(0, 15);
+  let carsImage = [
+    car,
+    car2,
+    car3,
+    car,
+    car2,
+    car3,
+    car,
+    car2,
+    car3,
+    car,
+    car,
+    car2,
+    car3,
+    car,
+    car2,
+  ];
 
   return (
     <div>
@@ -96,9 +114,10 @@ export default function Home() {
                     >
                       <Card className="row">
                         <Card.Img
-                          className="w-100 m-auto"
+                          height={110}
+                          className="w-75 m-auto"
                           variant="top"
-                          src={car}
+                          src={carsImage[index]}
                         />
                         <Card.Body className="CardBodyDiv col-12">
                           <Card.Title className="col-11 h5">
@@ -162,9 +181,10 @@ export default function Home() {
                       >
                         <Card className="row">
                           <Card.Img
-                            className="w-100 m-auto"
+                            height={110}
+                            className="w-75 m-auto"
                             variant="top"
-                            src={car}
+                            src={carsImage[index]}
                           />
                           <Card.Body className="CardBodyDiv col-12">
                             <Card.Title className="col-11 h5">
@@ -362,11 +382,17 @@ export default function Home() {
           <button className="button1DivApiAll">TEST IMONIALS</button>
           <h1 className="h1DivApiAll">Most popular cars rental deals</h1>
         </div>
-        <div className="col-10 col-md-10 col-lg-5 divbigDivUserReview">
-          <div className="col-12 col-md-5 col-lg-6 col-xl-">
-            <img className="w-100" src={boy} alt="boy" />
+
+        <div className="col-10 col-md-5 col-lg-5 divbigDivUserReview">
+          <div className="col-12 col-sm-5 col-md-5 col-lg-6 col-xl-">
+            <img
+              style={{ height: "21rem" }}
+              className="w-100"
+              src={boy}
+              alt="boy"
+            />
           </div>
-          <div className="col-12 col-md-5 col-lg-5 col-xl- divDescriptiondiv1bigDivUserReview">
+          <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl- divDescriptiondiv1bigDivUserReview">
             <h1>5.5 stars</h1>
             <h6>* * * * *</h6>
             <p>
@@ -378,11 +404,16 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="col-10 col-md-10 col-lg-5 divbigDivUserReview">
-          <div className="col-12 col-md-5 col-lg-5 col-xl-">
-            <img className="w-100" src={girl} alt="girl" />
+        <div className="col-10 col-md-5 col-lg-5 divbigDivUserReview">
+          <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-">
+            <img
+              style={{ height: "21rem" }}
+              className="w-100"
+              src={girl}
+              alt="girl"
+            />
           </div>
-          <div className="col-12 col-md-5 col-lg-5 col-xl- divDescriptiondiv1bigDivUserReview">
+          <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl- divDescriptiondiv1bigDivUserReview">
             <h1>5.5 stars</h1>
             <h6>* * * * *</h6>
             <p>
