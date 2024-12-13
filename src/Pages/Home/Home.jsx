@@ -394,7 +394,7 @@ export default function Home() {
           </div>
           <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl- divDescriptiondiv1bigDivUserReview">
             <h1>5.5 stars</h1>
-            <h6>* * * * *</h6>
+            <h6><IoIosStar style={{ color: "gold" }} /> <IoIosStar style={{ color: "gold" }} /> <IoIosStar style={{ color: "gold" }} /> <IoIosStar style={{ color: "gold" }} /> <IoIosStar style={{ color: "gold" }} /></h6>
             <p>
               “I feel very secure when using caretall's services. Your customer
               care team is very enthusiastic and the driver is always on time.”
@@ -415,7 +415,7 @@ export default function Home() {
           </div>
           <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl- divDescriptiondiv1bigDivUserReview">
             <h1>5.5 stars</h1>
-            <h6>* * * * *</h6>
+            <h6><IoIosStar style={{ color: "gold" }} /> <IoIosStar style={{ color: "gold" }} /> <IoIosStar style={{ color: "gold" }} /> <IoIosStar style={{ color: "gold" }} /> <IoIosStar style={{ color: "gold" }} /></h6>
             <p>
               “I feel very secure when using caretall's services. Your customer
               care team is very enthusiastic and the driver is always on time.”
