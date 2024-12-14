@@ -18,6 +18,10 @@ import { IoPersonSharp } from "react-icons/io5";
 import { BsCalendar2DayFill } from "react-icons/bs";
 import { IoLogoWechat } from "react-icons/io5";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { IoIosColorFill } from "react-icons/io";
+import { FaCalendarAlt } from "react-icons/fa";
+import { IoLogoModelS } from "react-icons/io";
+import { MdOutlineAutoAwesomeMosaic } from "react-icons/md";
 import car from "../../assets/card/car1.png";
 import car2 from "../../assets/card/car2.png";
 import car3 from "../../assets/card/car3.png";
@@ -123,36 +127,67 @@ export default function Home() {
                           <Card.Title className="col-11 h5">
                             {item.car_model}
                           </Card.Title>
+
                           <Card.Text className="col-11">
                             <IoIosStar style={{ color: "gold" }} /> 4.8{" "}
                             <span style={{ color: "#808080" }}>
                               (2.436 reviews)
                             </span>
                           </Card.Text>
+
                           <Card.Text
-                            style={{ color: "#959595", fontSize: "0.8rem" }}
-                            className="col-6 col-sm-6"
+                            style={{ color: "#959595", fontSize: "1rem" }}
+                            className="col-6 col-sm-6 CarModelFont"
                           >
-                            {item.car}
+                            <IoLogoModelS /> {item.car}
                           </Card.Text>
+
                           <Card.Text
-                            style={{ color: "#959595", fontSize: "0.8rem" }}
-                            className="col-6 col-sm-6"
+                            style={{ color: "#959595", fontSize: "1rem" }}
+                            className="col-6 col-sm-6 CarAuto"
                           >
-                            {item.price}
+                            <MdOutlineAutoAwesomeMosaic /> Auto
                           </Card.Text>
+
+                          <div
+                            style={{ borderBottom: "1px solid" }}
+                            className="col-12 d-flex"
+                          >
+                            <Card.Text
+                              style={{ color: "#959595", fontSize: "1rem" }}
+                              className="col-6 col-sm-6 CarYearFont"
+                            >
+                              <FaCalendarAlt /> {item.car_model_year}
+                            </Card.Text>
+                            <Card.Text
+                              style={{ color: "#959595", fontSize: "1rem" }}
+                              className="col-6 col-sm-6 CarColorFont"
+                            >
+                              <IoIosColorFill /> {item.car_color}
+                            </Card.Text>
+                          </div>
+
                           <Card.Text
-                            style={{ color: "#959595", fontSize: "0.8rem" }}
-                            className="col-6 col-sm-6"
+                            style={{
+                              color: "#959595",
+                              fontSize: "1rem",
+                              paddingTop: "1rem",
+                              margin: "0",
+                            }}
+                            className="col-12 d-flex justify-content-center CarPriceFont"
                           >
-                            {item.car_model_year}
+                            <p className="col-5">Price</p>
+                            <p className="col-6">
+                              <span
+                                className="fw-bold"
+                                style={{ color: "#292929" }}
+                              >
+                                {item.price}
+                              </span>{" "}
+                              / day
+                            </p>
                           </Card.Text>
-                          <Card.Text
-                            style={{ color: "#959595", fontSize: "0.8rem" }}
-                            className="col-6 col-sm-6"
-                          >
-                            {item.car_color}
-                          </Card.Text>
+
                           <Button
                             onClick={() => {
                               navigate("/product");
@@ -190,36 +225,67 @@ export default function Home() {
                             <Card.Title className="col-11 h5">
                               {item.car_model}
                             </Card.Title>
+
                             <Card.Text className="col-11">
                               <IoIosStar style={{ color: "gold" }} /> 4.8{" "}
                               <span style={{ color: "#808080" }}>
                                 (2.436 reviews)
                               </span>
                             </Card.Text>
+
                             <Card.Text
-                              style={{ color: "#959595", fontSize: "0.8rem" }}
-                              className="col-6 col-sm-6"
+                              style={{ color: "#959595", fontSize: "1rem" }}
+                              className="col-6 col-sm-6 CarModelFont"
                             >
-                              {item.car}
+                              <IoLogoModelS /> {item.car}
                             </Card.Text>
+
                             <Card.Text
-                              style={{ color: "#959595", fontSize: "0.8rem" }}
-                              className="col-6 col-sm-6"
+                              style={{ color: "#959595", fontSize: "1rem" }}
+                              className="col-6 col-sm-6 CarAuto"
                             >
-                              {item.price}
+                              <MdOutlineAutoAwesomeMosaic /> Auto
                             </Card.Text>
+
+                            <div
+                              style={{ borderBottom: "1px solid" }}
+                              className="col-12 d-flex"
+                            >
+                              <Card.Text
+                                style={{ color: "#959595", fontSize: "1rem" }}
+                                className="col-6 col-sm-6 CarYearFont"
+                              >
+                                <FaCalendarAlt /> {item.car_model_year}
+                              </Card.Text>
+                              <Card.Text
+                                style={{ color: "#959595", fontSize: "1rem" }}
+                                className="col-6 col-sm-6 CarColorFont"
+                              >
+                                <IoIosColorFill /> {item.car_color}
+                              </Card.Text>
+                            </div>
+
                             <Card.Text
-                              style={{ color: "#959595", fontSize: "0.8rem" }}
-                              className="col-6 col-sm-6"
+                              style={{
+                                color: "#959595",
+                                fontSize: "1rem",
+                                paddingTop: "1rem",
+                                margin: "0",
+                              }}
+                              className="col-12 d-flex justify-content-center CarPriceFont"
                             >
-                              {item.car_model_year}
+                              <p className="col-5">Price</p>
+                              <p className="col-6">
+                                <span
+                                  className="fw-bold"
+                                  style={{ color: "#292929" }}
+                                >
+                                  {item.price}
+                                </span>{" "}
+                                / day
+                              </p>
                             </Card.Text>
-                            <Card.Text
-                              style={{ color: "#959595", fontSize: "0.8rem" }}
-                              className="col-6 col-sm-6"
-                            >
-                              {item.car_color}
-                            </Card.Text>
+
                             <Button
                               onClick={() => {
                                 navigate("/product");
@@ -394,7 +460,13 @@ export default function Home() {
           </div>
           <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl- divDescriptiondiv1bigDivUserReview">
             <h1>5.5 stars</h1>
-            <h6><IoIosStar style={{ color: "gold" }} /> <IoIosStar style={{ color: "gold" }} /> <IoIosStar style={{ color: "gold" }} /> <IoIosStar style={{ color: "gold" }} /> <IoIosStar style={{ color: "gold" }} /></h6>
+            <h6>
+              <IoIosStar style={{ color: "gold" }} />{" "}
+              <IoIosStar style={{ color: "gold" }} />{" "}
+              <IoIosStar style={{ color: "gold" }} />{" "}
+              <IoIosStar style={{ color: "gold" }} />{" "}
+              <IoIosStar style={{ color: "gold" }} />
+            </h6>
             <p>
               “I feel very secure when using caretall's services. Your customer
               care team is very enthusiastic and the driver is always on time.”
@@ -415,7 +487,13 @@ export default function Home() {
           </div>
           <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl- divDescriptiondiv1bigDivUserReview">
             <h1>5.5 stars</h1>
-            <h6><IoIosStar style={{ color: "gold" }} /> <IoIosStar style={{ color: "gold" }} /> <IoIosStar style={{ color: "gold" }} /> <IoIosStar style={{ color: "gold" }} /> <IoIosStar style={{ color: "gold" }} /></h6>
+            <h6>
+              <IoIosStar style={{ color: "gold" }} />{" "}
+              <IoIosStar style={{ color: "gold" }} />{" "}
+              <IoIosStar style={{ color: "gold" }} />{" "}
+              <IoIosStar style={{ color: "gold" }} />{" "}
+              <IoIosStar style={{ color: "gold" }} />
+            </h6>
             <p>
               “I feel very secure when using caretall's services. Your customer
               care team is very enthusiastic and the driver is always on time.”

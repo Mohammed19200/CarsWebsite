@@ -5,6 +5,10 @@ import Card from "react-bootstrap/Card";
 import car from "../../assets/card/car1.png";
 import car2 from "../../assets/card/car2.png";
 import car3 from "../../assets/card/car3.png";
+import { IoIosColorFill } from "react-icons/io";
+import { FaCalendarAlt } from "react-icons/fa";
+import { IoLogoModelS } from "react-icons/io";
+import { MdOutlineAutoAwesomeMosaic } from "react-icons/md";
 import "./Data.css";
 import { IoIosStar } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
@@ -103,34 +107,62 @@ export default function Data() {
                   <Card.Title className="col-11 h5">
                     {item.car_model}
                   </Card.Title>
+
                   <Card.Text className="col-11">
                     <IoIosStar style={{ color: "gold" }} /> 4.8{" "}
                     <span style={{ color: "#808080" }}>(2.436 reviews)</span>
                   </Card.Text>
+
                   <Card.Text
-                    style={{ color: "#959595", fontSize: "0.8rem" }}
-                    className="col-6 col-sm-6"
+                    style={{ color: "#959595", fontSize: "1rem" }}
+                    className="col-6 col-sm-6 CarModelFont"
                   >
-                    {item.car}
+                    <IoLogoModelS /> {item.car}
                   </Card.Text>
+
                   <Card.Text
-                    style={{ color: "#959595", fontSize: "0.8rem" }}
-                    className="col-6 col-sm-6"
+                    style={{ color: "#959595", fontSize: "1rem" }}
+                    className="col-6 col-sm-6 CarAuto"
                   >
-                    {item.price}
+                    <MdOutlineAutoAwesomeMosaic /> Auto
                   </Card.Text>
+
+                  <div
+                    style={{ borderBottom: "1px solid" }}
+                    className="col-12 d-flex"
+                  >
+                    <Card.Text
+                      style={{ color: "#959595", fontSize: "1rem" }}
+                      className="col-6 col-sm-6 CarYearFont"
+                    >
+                      <FaCalendarAlt /> {item.car_model_year}
+                    </Card.Text>
+                    <Card.Text
+                      style={{ color: "#959595", fontSize: "1rem" }}
+                      className="col-6 col-sm-6 CarColorFont"
+                    >
+                      <IoIosColorFill /> {item.car_color}
+                    </Card.Text>
+                  </div>
+
                   <Card.Text
-                    style={{ color: "#959595", fontSize: "0.8rem" }}
-                    className="col-6 col-sm-6"
+                    style={{
+                      color: "#959595",
+                      fontSize: "1rem",
+                      paddingTop: "1rem",
+                      margin: "0",
+                    }}
+                    className="col-12 d-flex justify-content-center CarPriceFont"
                   >
-                    {item.car_model_year}
+                    <p className="col-5">Price</p>
+                    <p className="col-6">
+                      <span className="fw-bold" style={{ color: "#292929" }}>
+                        {item.price}
+                      </span>{" "}
+                      / day
+                    </p>
                   </Card.Text>
-                  <Card.Text
-                    style={{ color: "#959595", fontSize: "0.8rem" }}
-                    className="col-6 col-sm-6"
-                  >
-                    {item.car_color}
-                  </Card.Text>
+
                   <Button
                     onClick={() => {
                       navigate("/product");

@@ -16,3 +16,16 @@
   justify-content: center;
   text-align: center;
 }
+
+@media screen and (min-width: 768px) and (max-width: 910.5px) {
+  .CarPriceFont {
+    font-size: 0.8rem !important;
+  }
+
+  .CarModelFont,
+  .CarYearFont,
+  .CarAuto,
+  .CarColorFont {
+    font-size: 0.8rem !important;
+  }
+}
