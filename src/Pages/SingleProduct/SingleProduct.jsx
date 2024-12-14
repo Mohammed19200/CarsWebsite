@@ -4,9 +4,32 @@ import { LuAirVent } from "react-icons/lu";
 import { MdOutlineAutoAwesomeMosaic } from "react-icons/md";
 import { IoPersonOutline } from "react-icons/io5";
 import { LuDoorOpen } from "react-icons/lu";
+import { useNavigate } from "react-router-dom";
 
 export default function SingleProduct() {
+
+let navigate = useNavigate();
+
   return (
+    <div>
+
+<h5 style={{ padding: "0.5rem 2rem", color: "#959595" }}>
+        {" "}
+        <span
+          style={{
+            textDecoration: "underline",
+            color: "black",
+            cursor: "pointer",
+          }}
+          onClick={() => {
+            navigate("/home");
+          }}
+        >
+          Home
+        </span>{" "}
+        / Product
+      </h5>
+
     <div className="col-12 bigDivSingleProduct">
       <div className="col-11 col-sm-10 col-md-9 col-lg-5 divImgSingleProduct">
         <img className="w-100" src={car} alt="" />
@@ -32,6 +55,8 @@ export default function SingleProduct() {
           </h6>
         </div>
       </div>
+    </div>
+
     </div>
   );
 }
