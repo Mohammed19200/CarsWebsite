@@ -84,6 +84,13 @@ export default function Home() {
             Get a car wherever and whenever you need it with your IOS and
             Android device.
           </p>
+          <div
+            className="col-12 m-auto divInstallIconSec1"
+            style={{ display: "flex", gap: "1rem" }}
+          >
+            <img src={ios} alt="" />
+            <img src={android} alt="" />
+          </div>
         </div>
         <div className="col-10 col-md-8 col-lg-5 imgBigDivLandingPage">
           <img className="imgimgBigDivLandingPage" src={imgBigCar} alt="" />
