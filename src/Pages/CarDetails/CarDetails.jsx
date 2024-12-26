@@ -6,7 +6,7 @@ import { IoPersonOutline } from "react-icons/io5";
 import { LuDoorOpen } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";
 
-export default function SingleProduct() {
+export default function CarDetails() {
 
 let navigate = useNavigate();
 

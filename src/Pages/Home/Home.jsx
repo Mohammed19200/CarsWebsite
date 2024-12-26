@@ -197,7 +197,7 @@ export default function Home() {
 
                           <Button
                             onClick={() => {
-                              navigate("/product");
+                              navigate("/car-details");
                             }}
                             className="col-9 col-md-8 col-lg-7 col-xl-8"
                             variant="primary"
@@ -295,7 +295,7 @@ export default function Home() {
 
                             <Button
                               onClick={() => {
-                                navigate("/product");
+                                navigate("/car-details");
                               }}
                               className="col-9 col-md-8 col-lg-7 col-xl-8"
                               variant="primary"
@@ -312,7 +312,7 @@ export default function Home() {
 
           <button
             onClick={() => {
-              navigate("/data");
+              navigate("/cars");
             }}
             className="button2DivApiAll btn btn-outline-secondary"
           >

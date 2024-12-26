@@ -1,10 +1,10 @@
 import "./App.css";
-import Data from "./Pages/Data/Data";
 import Home from "./Pages/Home/Home";
-import SingleProduct from "./Pages/SingleProduct/SingleProduct";
 import NotFound from "./Pages/NotFound/NotFound";
 import Layouts from "./Layouts/Layouts";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Cars from "./Pages/Cars/Cars";
+import CarDetails from "./Pages/CarDetails/CarDetails";
 
 export default function App() {
   const routers = createBrowserRouter([
@@ -14,8 +14,8 @@ export default function App() {
       children: [
         { index: true, element: <Home /> },
         { path: "home", element: <Home /> },
-        { path: "data", element: <Data /> },
-        { path: "product", element: <SingleProduct /> },
+        { path: "cars", element: <Cars /> },
+        { path: "car-details", element: <CarDetails /> },
       ],
     },
     { path: "*", element: <NotFound /> },

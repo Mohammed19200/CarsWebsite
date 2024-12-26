@@ -13,7 +13,7 @@ import "./Data.css";
 import { IoIosStar } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
-export default function Data() {
+export default function Cars() {
   const [dataItem, setdataItem] = useState([]);
   let navigate = useNavigate();
 
@@ -165,7 +165,7 @@ export default function Data() {
 
                   <Button
                     onClick={() => {
-                      navigate("/product");
+                      navigate("/car-details");
                     }}
                     className="col-9 col-md-8 col-lg-7 col-xl-8"
                     variant="primary"
