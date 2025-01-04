@@ -31,6 +31,8 @@ import { IoIosStar } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
 
 export default function Home() {
   let navigate = useNavigate();
@@ -52,8 +54,8 @@ export default function Home() {
     allData();
   }, []);
 
-  let dataSliceFixed = dataItem.slice(0, 4);
-  let dataSliceDynamic = dataItem.slice(0, 15);
+  let dataSliceFixed = dataItem.slice(0, 15);
+  let dataSliceDynamic = dataItem.slice(0, 10);
   let carsImage = [
     car,
     car2,
@@ -116,8 +118,145 @@ export default function Home() {
           <h1 className="h1DivApiAll">Most popular cars rental deals</h1>
 
           <div className="col-12 bigDivCard">
-            {Input == undefined || Input == null
-              ? dataSliceFixed.map((item, index) => {
+            {Input == undefined || Input == null ? (
+              <Swiper
+                style={{ padding: "1rem 2rem" }}
+                breakpoints={{
+                  3000: {
+                    spaceBetween: 300,
+                    slidesPerView: 3,
+                  },
+                  1440: {
+                    spaceBetween: 50,
+                    slidesPerView: 4,
+                  },
+                  1023: {
+                    spaceBetween: 50,
+                    slidesPerView: 3,
+                  },
+                  768: {
+                    spaceBetween: 40,
+                    slidesPerView: 3,
+                  },
+                  600: {
+                    spaceBetween: 40,
+                    slidesPerView: 2,
+                  },
+                  480: {
+                    spaceBetween: 40,
+                    slidesPerView: 2,
+                  },
+                  200: {
+                    spaceBetween: 50,
+                    slidesPerView: 1,
+                  },
+                }}
+                modules={[Navigation, Autoplay]}
+                loop={true}
+                autoplay={{
+                  delay: 1000,
+                  disableOnInteraction: false,
+                }}
+                spaceBetween={50}
+                slidesPerView={3}
+                navigation
+              >
+                {dataSliceFixed.map((item, index) => {
+                  return (
+                    <SwiperSlide key={index}>
+                      <Card className="row">
+                        <Card.Img
+                          height={110}
+                          className="w-75 m-auto"
+                          variant="top"
+                          src={carsImage[index]}
+                        />
+                        <Card.Body className="CardBodyDiv col-12">
+                          <Card.Title className="col-11 h5">
+                            {item.car_model}
+                          </Card.Title>
+
+                          <Card.Text className="col-11">
+                            <IoIosStar style={{ color: "gold" }} /> 4.8{" "}
+                            <span style={{ color: "#808080" }}>
+                              (2.436 reviews)
+                            </span>
+                          </Card.Text>
+
+                          <Card.Text
+                            style={{ color: "#959595", fontSize: "1rem" }}
+                            className="col-6 col-sm-6 CarModelFont"
+                          >
+                            <IoLogoModelS /> {item.car}
+                          </Card.Text>
+
+                          <Card.Text
+                            style={{ color: "#959595", fontSize: "1rem" }}
+                            className="col-6 col-sm-6 CarAuto"
+                          >
+                            <MdOutlineAutoAwesomeMosaic /> Auto
+                          </Card.Text>
+
+                          <div
+                            style={{ borderBottom: "1px solid" }}
+                            className="col-12 d-flex"
+                          >
+                            <Card.Text
+                              style={{ color: "#959595", fontSize: "1rem" }}
+                              className="col-6 col-sm-6 CarYearFont"
+                            >
+                              <FaCalendarAlt /> {item.car_model_year}
+                            </Card.Text>
+                            <Card.Text
+                              style={{ color: "#959595", fontSize: "1rem" }}
+                              className="col-6 col-sm-6 CarColorFont"
+                            >
+                              <IoIosColorFill /> {item.car_color}
+                            </Card.Text>
+                          </div>
+
+                          <Card.Text
+                            style={{
+                              color: "#959595",
+                              fontSize: "1rem",
+                              paddingTop: "1rem",
+                              margin: "0",
+                            }}
+                            className="col-12 d-flex justify-content-center CarPriceFont"
+                          >
+                            <p className="col-5">Price</p>
+                            <p className="col-6">
+                              <span
+                                className="fw-bold"
+                                style={{ color: "#292929" }}
+                              >
+                                {item.price}
+                              </span>{" "}
+                              / day
+                            </p>
+                          </Card.Text>
+
+                          <Button
+                            onClick={() => {
+                              navigate("/car-details");
+                            }}
+                            className="col-9 col-md-8 col-lg-7 col-xl-8"
+                            variant="primary"
+                          >
+                            Rent Now
+                          </Button>
+                        </Card.Body>
+                      </Card>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+            ) : (
+              dataSliceDynamic.map((item, index) => {
+                if (
+                  item.car_model.toUpperCase().includes(Input.toUpperCase()) ||
+                  item.car_model.toLowerCase().includes(Input.toLowerCase())
+                ) {
                   return (
                     <div
                       key={index}
@@ -208,108 +347,139 @@ export default function Home() {
                       </Card>
                     </div>
                   );
-                })
-              : dataSliceDynamic.map((item, index) => {
-                  if (
-                    item.car_model
-                      .toUpperCase()
-                      .includes(Input.toUpperCase()) ||
-                    item.car_model.toLowerCase().includes(Input.toLowerCase())
-                  ) {
-                    return (
-                      <div
-                        key={index}
-                        className="bigDivCard col-10 col-sm-5 col-md-3 col-lg-3 col-xl-2 "
-                      >
-                        <Card className="row">
-                          <Card.Img
-                            height={110}
-                            className="w-75 m-auto"
-                            variant="top"
-                            src={carsImage[index]}
-                          />
-                          <Card.Body className="CardBodyDiv col-12">
-                            <Card.Title className="col-11 h5">
-                              {item.car_model}
-                            </Card.Title>
+                } else {
+                  <Swiper
+                    style={{ padding: "1rem 2rem" }}
+                    breakpoints={{
+                      3000: {
+                        spaceBetween: 300,
+                        slidesPerView: 3,
+                      },
+                      1440: {
+                        spaceBetween: 50,
+                        slidesPerView: 4,
+                      },
+                      1023: {
+                        spaceBetween: 50,
+                        slidesPerView: 3,
+                      },
+                      768: {
+                        spaceBetween: 40,
+                        slidesPerView: 3,
+                      },
+                      600: {
+                        spaceBetween: 40,
+                        slidesPerView: 2,
+                      },
+                      480: {
+                        spaceBetween: 40,
+                        slidesPerView: 2,
+                      },
+                      200: {
+                        spaceBetween: 50,
+                        slidesPerView: 1,
+                      },
+                    }}
+                    modules={[Navigation, Autoplay]}
+                    loop={true}
+                    autoplay={{
+                      delay: 1000,
+                      disableOnInteraction: false,
+                    }}
+                    spaceBetween={50}
+                    slidesPerView={3}
+                    navigation
+                  >
+                    <SwiperSlide key={index}>
+                      <Card className="row">
+                        <Card.Img
+                          height={110}
+                          className="w-75 m-auto"
+                          variant="top"
+                          src={carsImage[index]}
+                        />
+                        <Card.Body className="CardBodyDiv col-12">
+                          <Card.Title className="col-11 h5">
+                            {item.car_model}
+                          </Card.Title>
 
-                            <Card.Text className="col-11">
-                              <IoIosStar style={{ color: "gold" }} /> 4.8{" "}
-                              <span style={{ color: "#808080" }}>
-                                (2.436 reviews)
-                              </span>
-                            </Card.Text>
+                          <Card.Text className="col-11">
+                            <IoIosStar style={{ color: "gold" }} /> 4.8{" "}
+                            <span style={{ color: "#808080" }}>
+                              (2.436 reviews)
+                            </span>
+                          </Card.Text>
 
+                          <Card.Text
+                            style={{ color: "#959595", fontSize: "1rem" }}
+                            className="col-6 col-sm-6 CarModelFont"
+                          >
+                            <IoLogoModelS /> {item.car}
+                          </Card.Text>
+
+                          <Card.Text
+                            style={{ color: "#959595", fontSize: "1rem" }}
+                            className="col-6 col-sm-6 CarAuto"
+                          >
+                            <MdOutlineAutoAwesomeMosaic /> Auto
+                          </Card.Text>
+
+                          <div
+                            style={{ borderBottom: "1px solid" }}
+                            className="col-12 d-flex"
+                          >
                             <Card.Text
                               style={{ color: "#959595", fontSize: "1rem" }}
-                              className="col-6 col-sm-6 CarModelFont"
+                              className="col-6 col-sm-6 CarYearFont"
                             >
-                              <IoLogoModelS /> {item.car}
+                              <FaCalendarAlt /> {item.car_model_year}
                             </Card.Text>
-
                             <Card.Text
                               style={{ color: "#959595", fontSize: "1rem" }}
-                              className="col-6 col-sm-6 CarAuto"
+                              className="col-6 col-sm-6 CarColorFont"
                             >
-                              <MdOutlineAutoAwesomeMosaic /> Auto
+                              <IoIosColorFill /> {item.car_color}
                             </Card.Text>
+                          </div>
 
-                            <div
-                              style={{ borderBottom: "1px solid" }}
-                              className="col-12 d-flex"
-                            >
-                              <Card.Text
-                                style={{ color: "#959595", fontSize: "1rem" }}
-                                className="col-6 col-sm-6 CarYearFont"
+                          <Card.Text
+                            style={{
+                              color: "#959595",
+                              fontSize: "1rem",
+                              paddingTop: "1rem",
+                              margin: "0",
+                            }}
+                            className="col-12 d-flex justify-content-center CarPriceFont"
+                          >
+                            <p className="col-5">Price</p>
+                            <p className="col-6">
+                              <span
+                                className="fw-bold"
+                                style={{ color: "#292929" }}
                               >
-                                <FaCalendarAlt /> {item.car_model_year}
-                              </Card.Text>
-                              <Card.Text
-                                style={{ color: "#959595", fontSize: "1rem" }}
-                                className="col-6 col-sm-6 CarColorFont"
-                              >
-                                <IoIosColorFill /> {item.car_color}
-                              </Card.Text>
-                            </div>
+                                {item.price}
+                              </span>{" "}
+                              / day
+                            </p>
+                          </Card.Text>
 
-                            <Card.Text
-                              style={{
-                                color: "#959595",
-                                fontSize: "1rem",
-                                paddingTop: "1rem",
-                                margin: "0",
-                              }}
-                              className="col-12 d-flex justify-content-center CarPriceFont"
-                            >
-                              <p className="col-5">Price</p>
-                              <p className="col-6">
-                                <span
-                                  className="fw-bold"
-                                  style={{ color: "#292929" }}
-                                >
-                                  {item.price}
-                                </span>{" "}
-                                / day
-                              </p>
-                            </Card.Text>
-
-                            <Button
-                              onClick={() => {
-                                navigate("/car-details");
-                              }}
-                              className="col-9 col-md-8 col-lg-7 col-xl-8"
-                              variant="primary"
-                            >
-                              Rent Now
-                            </Button>
-                          </Card.Body>
-                        </Card>
-                      </div>
-                    );
-                  }
-                })}
+                          <Button
+                            onClick={() => {
+                              navigate("/car-details");
+                            }}
+                            className="col-9 col-md-8 col-lg-7 col-xl-8"
+                            variant="primary"
+                          >
+                            Rent Now
+                          </Button>
+                        </Card.Body>
+                      </Card>
+                    </SwiperSlide>
+                  </Swiper>;
+                }
+              })
+            )}
           </div>
-
           <button
             onClick={() => {
               navigate("/cars");
@@ -356,34 +526,74 @@ export default function Home() {
       </div>
 
       <div className="bigestDivBrands col-10">
-        <div className="col-5 col-sm-3 col-md-2 col-lg-2 divImgBrand">
-          <img
-            className="col-8 col-sm-8 col-md-8 col-lg-6"
-            src={brand1}
-            alt="Brand1"
-          />
-        </div>
-        <div className="col-5 col-sm-3 col-md-2 col-lg-2 divImgBrand">
-          <img
-            className="col-8 col-sm-8 col-md-8 col-lg-6"
-            src={brand2}
-            alt="Brand2"
-          />
-        </div>
-        <div className="col-5 col-sm-3 col-md-2 col-lg-2 divImgBrand">
-          <img
-            className="col-8 col-sm-8 col-md-8 col-lg-6"
-            src={brand3}
-            alt="Brand3"
-          />
-        </div>
-        <div className="col-5 col-sm-3 col-md-2 col-lg-2 divImgBrand">
-          <img
-            className="col-8 col-sm-8 col-md-8 col-lg-6"
-            src={brand4}
-            alt="Brand4"
-          />
-        </div>
+        <Swiper
+          breakpoints={{
+            3000: {
+              spaceBetween: 50,
+              slidesPerView: 5,
+            },
+            1440: {
+              spaceBetween: 50,
+              slidesPerView: 4,
+            },
+            1023: {
+              spaceBetween: 50,
+              slidesPerView: 3,
+            },
+            768: {
+              spaceBetween: 50,
+              slidesPerView: 3,
+            },
+            600: {
+              spaceBetween: 30,
+              slidesPerView: 2,
+            },
+            480: {
+              spaceBetween: 0,
+              slidesPerView: 1,
+            },
+            200: {
+              spaceBetween: 0,
+              slidesPerView: 1,
+            },
+          }}
+          modules={[Autoplay]}
+          spaceBetween={50}
+          slidesPerView={4}
+          loop={true}
+          autoplay={{
+            delay: 1000,
+            disableOnInteraction: false,
+          }}
+        >
+          <SwiperSlide>
+            <div className="divImgBrand">
+              <img className="" src={brand1} alt="Brand1" />
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="divImgBrand">
+              <img className="" src={brand2} alt="Brand2" />
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="divImgBrand">
+              <img className="" src={brand3} alt="Brand3" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="divImgBrand">
+              <img className="" src={brand4} alt="Brand4" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="divImgBrand">
+              <img className="" src={brand2} alt="Brand2" />
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
 
       <div className="col-12 bigestDivSec5">
