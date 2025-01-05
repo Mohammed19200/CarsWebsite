@@ -117,7 +117,8 @@ export default function Cars() {
                     style={{ color: "#959595", fontSize: "1rem" }}
                     className="col-6 col-sm-6 CarModelFont"
                   >
-                    <IoLogoModelS /> {item.car}
+                    <IoLogoModelS />{" "}
+                    {item.car.split(" ").splice(0, 1).join(" ")}
                   </Card.Text>
 
                   <Card.Text

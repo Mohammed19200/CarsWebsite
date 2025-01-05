@@ -55,7 +55,7 @@ export default function Home() {
   }, []);
 
   let dataSliceFixed = dataItem.slice(0, 15);
-  let dataSliceDynamic = dataItem.slice(0, 10);
+  let dataSliceDynamic = dataItem.slice(0, 5);
   let carsImage = [
     car,
     car2,
@@ -285,9 +285,9 @@ export default function Home() {
                             style={{ color: "#959595", fontSize: "1rem" }}
                             className="col-6 col-sm-6 CarModelFont"
                           >
-                            <IoLogoModelS /> {item.car}
+                            <IoLogoModelS />{" "}
+                            {item.car.split(" ").splice(0, 1).join(" ")}
                           </Card.Text>
-
                           <Card.Text
                             style={{ color: "#959595", fontSize: "1rem" }}
                             className="col-6 col-sm-6 CarAuto"
@@ -414,7 +414,8 @@ export default function Home() {
                             style={{ color: "#959595", fontSize: "1rem" }}
                             className="col-6 col-sm-6 CarModelFont"
                           >
-                            <IoLogoModelS /> {item.car}
+                            <IoLogoModelS />{" "}
+                            {item.car.split(" ").splice(0, 1).join(" ")}
                           </Card.Text>
 
                           <Card.Text
@@ -666,59 +667,167 @@ export default function Home() {
           <h1 className="h1DivApiAll">Most popular cars rental deals</h1>
         </div>
 
-        <div className="col-10 col-md-5 col-lg-5 divbigDivUserReview">
-          <div className="col-12 col-sm-5 col-md-5 col-lg-6 col-xl-">
-            <img
-              style={{ height: "21rem" }}
-              className="w-100"
-              src={boy}
-              alt="boy"
-            />
-          </div>
-          <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl- divDescriptiondiv1bigDivUserReview">
-            <h1>5.5 stars</h1>
-            <h6>
-              <IoIosStar style={{ color: "gold" }} />{" "}
-              <IoIosStar style={{ color: "gold" }} />{" "}
-              <IoIosStar style={{ color: "gold" }} />{" "}
-              <IoIosStar style={{ color: "gold" }} />{" "}
-              <IoIosStar style={{ color: "gold" }} />
-            </h6>
-            <p>
-              “I feel very secure when using caretall's services. Your customer
-              care team is very enthusiastic and the driver is always on time.”
-            </p>
-            <h5>Charlie Johnson</h5>
-            <h6>Last updated 3 mins ago</h6>
-          </div>
-        </div>
+        <Swiper
+          className="col-10 m-auto"
+          breakpoints={{
+            3000: {
+              spaceBetween: 50,
+              slidesPerView: 2,
+            },
+            1440: {
+              spaceBetween: 50,
+              slidesPerView: 2,
+            },
+            1023: {
+              spaceBetween: 50,
+              slidesPerView: 2,
+            },
+            768: {
+              spaceBetween: 50,
+              slidesPerView: 2,
+            },
+            600: {
+              spaceBetween: 30,
+              slidesPerView: 1,
+            },
+            480: {
+              spaceBetween: 0,
+              slidesPerView: 1,
+            },
+            200: {
+              spaceBetween: 0,
+              slidesPerView: 1,
+            },
+          }}
+          modules={[Autoplay]}
+          spaceBetween={50}
+          slidesPerView={4}
+          loop={true}
+          autoplay={{
+            delay: 1000,
+            disableOnInteraction: false,
+          }}
+        >
+          <SwiperSlide>
+            <div className="divbigDivUserReview">
+              <div className="col-12 col-sm-5 col-md-5 col-lg-6 col-xl-">
+                <img
+                  style={{ height: "21rem" }}
+                  className="w-100"
+                  src={boy}
+                  alt="boy"
+                />
+              </div>
+              <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl- divDescriptiondiv1bigDivUserReview">
+                <h1>5.5 stars</h1>
+                <h6>
+                  <IoIosStar style={{ color: "gold" }} />{" "}
+                  <IoIosStar style={{ color: "gold" }} />{" "}
+                  <IoIosStar style={{ color: "gold" }} />{" "}
+                  <IoIosStar style={{ color: "gold" }} />{" "}
+                  <IoIosStar style={{ color: "gold" }} />
+                </h6>
+                <p>
+                  “I feel very secure when using caretall's services. Your
+                  customer care team is very enthusiastic and the driver is
+                  always on time.”
+                </p>
+                <h5>Charlie Johnson</h5>
+                <h6>Last updated 3 mins ago</h6>
+              </div>
+            </div>
+          </SwiperSlide>
 
-        <div className="col-10 col-md-5 col-lg-5 divbigDivUserReview">
-          <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-">
-            <img
-              style={{ height: "21rem" }}
-              className="w-100"
-              src={girl}
-              alt="girl"
-            />
-          </div>
-          <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl- divDescriptiondiv1bigDivUserReview">
-            <h1>5.5 stars</h1>
-            <h6>
-              <IoIosStar style={{ color: "gold" }} />{" "}
-              <IoIosStar style={{ color: "gold" }} />{" "}
-              <IoIosStar style={{ color: "gold" }} />{" "}
-              <IoIosStar style={{ color: "gold" }} />{" "}
-              <IoIosStar style={{ color: "gold" }} />
-            </h6>
-            <p>
-              “I feel very secure when using caretall's services. Your customer
-              care team is very enthusiastic and the driver is always on time.”
-            </p>
-            <h5>Charlie Johnson</h5>
-            <h6>Last updated 3 mins ago</h6>
-          </div>
-        </div>
+          <SwiperSlide>
+            <div className="divbigDivUserReview">
+              <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-">
+                <img
+                  style={{ height: "21rem" }}
+                  className="w-100"
+                  src={girl}
+                  alt="girl"
+                />
+              </div>
+              <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl- divDescriptiondiv1bigDivUserReview">
+                <h1>5.5 stars</h1>
+                <h6>
+                  <IoIosStar style={{ color: "gold" }} />{" "}
+                  <IoIosStar style={{ color: "gold" }} />{" "}
+                  <IoIosStar style={{ color: "gold" }} />{" "}
+                  <IoIosStar style={{ color: "gold" }} />{" "}
+                  <IoIosStar style={{ color: "gold" }} />
+                </h6>
+                <p>
+                  “I feel very secure when using caretall's services. Your
+                  customer care team is very enthusiastic and the driver is
+                  always on time.”
+                </p>
+                <h5>Charlie Johnson</h5>
+                <h6>Last updated 3 mins ago</h6>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="divbigDivUserReview">
+              <div className="col-12 col-sm-5 col-md-5 col-lg-6 col-xl-">
+                <img
+                  style={{ height: "21rem" }}
+                  className="w-100"
+                  src={boy}
+                  alt="boy"
+                />
+              </div>
+              <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl- divDescriptiondiv1bigDivUserReview">
+                <h1>5.5 stars</h1>
+                <h6>
+                  <IoIosStar style={{ color: "gold" }} />{" "}
+                  <IoIosStar style={{ color: "gold" }} />{" "}
+                  <IoIosStar style={{ color: "gold" }} />{" "}
+                  <IoIosStar style={{ color: "gold" }} />{" "}
+                  <IoIosStar style={{ color: "gold" }} />
+                </h6>
+                <p>
+                  “I feel very secure when using caretall's services. Your
+                  customer care team is very enthusiastic and the driver is
+                  always on time.”
+                </p>
+                <h5>Charlie Johnson</h5>
+                <h6>Last updated 3 mins ago</h6>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="divbigDivUserReview">
+              <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-">
+                <img
+                  style={{ height: "21rem" }}
+                  className="w-100"
+                  src={girl}
+                  alt="girl"
+                />
+              </div>
+              <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl- divDescriptiondiv1bigDivUserReview">
+                <h1>5.5 stars</h1>
+                <h6>
+                  <IoIosStar style={{ color: "gold" }} />{" "}
+                  <IoIosStar style={{ color: "gold" }} />{" "}
+                  <IoIosStar style={{ color: "gold" }} />{" "}
+                  <IoIosStar style={{ color: "gold" }} />{" "}
+                  <IoIosStar style={{ color: "gold" }} />
+                </h6>
+                <p>
+                  “I feel very secure when using caretall's services. Your
+                  customer care team is very enthusiastic and the driver is
+                  always on time.”
+                </p>
+                <h5>Charlie Johnson</h5>
+                <h6>Last updated 3 mins ago</h6>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
 
       <div className="bigestDivSec7">
